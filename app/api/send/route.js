@@ -19,7 +19,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: process.env.GMAIL_APP_PASS,
       to: process.env.MAIL_TO,
-      subject: `New message from ${name}`,
+      subject: `New message from ${name} ${email}`,
       text: message,
     });
 
