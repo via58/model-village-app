@@ -35,7 +35,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2">
             <Image src={logo} alt="Village Welfare Logo" width={64} height={64} />
             <h1 className="text-xl md:text-2xl font-bold text-green-600">
-             Modern Village
+             Model Village
             </h1>
           </Link>
 

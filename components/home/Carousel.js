@@ -8,23 +8,27 @@ import carousel1 from '@/assets/Carousal_1.png';
 import carousel2 from '@/assets/Carousal_2.png';
 import carousel3 from '@/assets/Carousal_3.png';
 import carousel4 from '@/assets/Carousal_4.png';
+import carousel5 from '@/assets/Carousal_5.jpg';
+import carousel6 from '@/assets/Carousal_6.jpg';
+import carousel7 from '@/assets/Carousal_7.jpg';
+
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
     {
-      image: carousel1,
+      image: carousel5,
       title: 'Support Farmers',
       description: 'Help our village farmers with modern equipment and resources'
     },
     {
-      image: carousel2,
+      image: carousel6,
       title: 'Clean Water Access',
       description: 'Provide clean water infrastructure to every household'
     },
     {
-      image: carousel3,
+      image: carousel7,
       title: 'Sustainable Farming',
       description: 'Promote organic and environmentally friendly agriculture'
     },
