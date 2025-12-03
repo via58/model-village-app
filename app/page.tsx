@@ -1,45 +1,44 @@
 // app/page.js
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import Carousel from '@/components/home/Carousel';
-import { Sprout, Droplets, Users, Heart } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import Carousel from "@/components/home/Carousel";
+import ContactPage from "@/components/contact/contact";
+import { Sprout, Droplets, Users, Heart } from "lucide-react";
 
 export default function HomePage() {
   const impactAreas = [
-    { 
-      icon: Sprout, 
-      title: 'Agriculture', 
-      desc: 'Modern farming equipment and training for better yields' 
+    {
+      icon: Sprout,
+      title: "Agriculture",
+      desc: "Modern farming equipment and training for better yields",
     },
-    { 
-      icon: Droplets, 
-      title: 'Irrigation', 
-      desc: 'Sustainable water management systems for all seasons' 
+    {
+      icon: Droplets,
+      title: "Irrigation",
+      desc: "Sustainable water management systems for all seasons",
     },
-    { 
-      icon: Users, 
-      title: 'Community', 
-      desc: 'Building stronger village bonds through collective growth' 
+    {
+      icon: Users,
+      title: "Community",
+      desc: "Building stronger village bonds through collective growth",
     },
-    { 
-      icon: Heart, 
-      title: 'Healthcare', 
-      desc: 'Accessible medical facilities for farming families' 
-    }
+    {
+      icon: Heart,
+      title: "Healthcare",
+      desc: "Accessible medical facilities for farming families",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
       <main>
         {/* Carousel Section */}
         <Carousel />
-
         {/* Impact Areas */}
         <section className="max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="text-center mb-12">
@@ -47,13 +46,14 @@ export default function HomePage() {
               Our Impact Areas
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Every contribution helps us create lasting change in rural communities
+              Every contribution helps us create lasting change in rural
+              communities
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {impactAreas.map((area, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
               >
@@ -63,9 +63,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-bold mb-2 text-gray-800 text-center">
                   {area.title}
                 </h3>
-                <p className="text-gray-600 text-center text-sm">
-                  {area.desc}
-                </p>
+                <p className="text-gray-600 text-center text-sm">{area.desc}</p>
               </div>
             ))}
           </div>
@@ -98,14 +96,14 @@ export default function HomePage() {
               Make a Difference Today
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-              Your contribution, no matter the size, helps provide essential resources 
-              and support to hardworking farmers and their families.
+              Your contribution, no matter the size, helps provide essential
+              resources and support to hardworking farmers and their families.
             </p>
             {/* <Link 
               href="/donate"
               className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 shadow-lg transform hover:scale-105 transition"
             > */}
-              Donate Now
+            Donate Now
             {/* </Link> */}
           </div>
         </section>
@@ -119,20 +117,20 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Ravi Kumar',
-                  role: 'Farmer, Green Valley',
-                  text: 'The new irrigation system has doubled our crop yield. We are truly grateful.'
+                  name: "Ravi Kumar",
+                  role: "Farmer, Green Valley",
+                  text: "The new irrigation system has doubled our crop yield. We are truly grateful.",
                 },
                 {
-                  name: 'Priya Sharma',
-                  role: 'Village Leader',
-                  text: 'Community programs have brought us together and improved our lives significantly.'
+                  name: "Priya Sharma",
+                  role: "Village Leader",
+                  text: "Community programs have brought us together and improved our lives significantly.",
                 },
                 {
-                  name: 'Suresh Patel',
-                  role: 'Organic Farmer',
-                  text: 'Training in sustainable farming practices has transformed how we work our land.'
-                }
+                  name: "Suresh Patel",
+                  role: "Organic Farmer",
+                  text: "Training in sustainable farming practices has transformed how we work our land.",
+                },
               ].map((testimonial, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-xl shadow-lg">
                   <div className="text-green-600 text-4xl mb-4">"</div>
@@ -157,8 +155,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        {/* CTA Section */}
+        <ContactPage />
       </main>
-
       <Footer />
     </div>
   );
