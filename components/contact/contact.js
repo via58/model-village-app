@@ -35,7 +35,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="">
+    <section id="contact" className="">
       <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 md:p-12 text-center">
         <form
           onSubmit={handleSubmit}

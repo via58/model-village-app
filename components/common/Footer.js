@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-3xl">🌾</span>
-              <h3 className="text-xl font-bold">Village Welfare</h3>
+              <h3 className="text-xl font-bold">Model Village</h3>
             </div>
             <p className="text-green-100 text-sm">
               Empowering farmers and building sustainable communities through 
@@ -29,15 +29,26 @@ export default function Footer() {
                   Home
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/donate" className="hover:text-white transition">
                   Donate Now
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link href="/contact" className="hover:text-white transition">
+                <a 
+                  href="/#contact" 
+                  className="hover:text-white transition cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname === '/') {
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      window.location.href = '/#contact';
+                    }
+                  }}
+                >
                   Contact Us
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/about" className="hover:text-white transition">
@@ -77,7 +88,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-green-500 pt-6 text-center">
           <p className="text-green-100 text-sm">
-            © {new Date().getFullYear()} Village Welfare Fund. All rights reserved.
+            © {new Date().getFullYear()} Model Village. All rights reserved.
           </p>
           <p className="text-green-200 text-xs mt-2">
             Building better futures for farming communities

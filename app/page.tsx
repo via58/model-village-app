@@ -1,7 +1,7 @@
 // app/page.js
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
@@ -10,6 +10,14 @@ import ContactPage from "@/components/contact/contact";
 import { Sprout, Droplets, Users, Heart } from "lucide-react";
 
 export default function HomePage() {
+  useEffect(() => {
+    if (window.location.hash === '#contact') {
+      setTimeout(() => {
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
+
   const impactAreas = [
     {
       icon: Sprout,
@@ -92,7 +100,7 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-7xl mx-auto px-4 py-12 md:py-16">
+        {/* <section className="max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">
               Make a Difference Today
@@ -105,10 +113,10 @@ export default function HomePage() {
               href="/donate"
               className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 shadow-lg transform hover:scale-105 transition"
             > */}
-            Donate Now
+            {/* Donate Now */}
             {/* </Link> */}
-          </div>
-        </section>
+          {/* </div> */}
+        {/* </section>  */}
 
         {/* Testimonials */}
         <section className="bg-gray-100 py-12 md:py-16">
@@ -157,6 +165,78 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+           <section className="bg-gradient-to-br from-green-600 to-green-700 text-white py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Empowering Rural Education Through STEM
+                </h2>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      ✓
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">600+ Children Impacted</h3>
+                      <p className="text-green-100">Access to engaging STEM content and modern tools</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      ✓
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Hub-and-Spoke Model</h3>
+                      <p className="text-green-100">Scalable and replicable education ecosystem</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      ✓
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Local Capacity Building</h3>
+                      <p className="text-green-100">Training youth as educators and researchers</p>
+                    </div>
+                  </div>
+                </div>
+                <Link 
+                  href="/about"
+                  className="inline-block bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-50 shadow-lg transform hover:scale-105 transition"
+                >
+                  Learn More About Our Vision
+                </Link>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold mb-6 text-center">Project Impact</h3>
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold mb-2">₹1.05 Cr</div>
+                    <div className="text-green-100">Total Project Budget</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                      <div className="text-3xl font-bold mb-1">5+</div>
+                      <div className="text-green-100 text-sm">Schools</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold mb-1">11</div>
+                      <div className="text-green-100 text-sm">Staff Members</div>
+                    </div>
+                  </div>
+                  <div className="pt-4 border-t border-white/20">
+                    <p className="text-center text-sm text-green-100">
+                      Aligned with 8 UN Sustainable Development Goals
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <ContactPage />
       </main>

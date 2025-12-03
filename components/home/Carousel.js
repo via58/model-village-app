@@ -11,10 +11,12 @@ import carousel4 from '@/assets/Carousal_4.png';
 import carousel5 from '@/assets/Carousal_5.jpg';
 import carousel6 from '@/assets/Carousal_6.jpg';
 import carousel7 from '@/assets/Carousal_7.jpg';
+import carousel8 from '@/assets/Carousal_8.png';
 
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   const slides = [
     {
@@ -33,19 +35,27 @@ export default function Carousel() {
       description: 'STEM skills—coding, robotics, problem-solving—are essential for 21st-century livelihoods.'
     },
     {
-      image: carousel4,
+      image: carousel8,
       title: 'Building Community Capacity',
       description: 'Local youth are trained as educators and researchers—creating sustainable knowledge ecosystems.'
     }
   ];
 
   useEffect(() => {
+    setMounted(true);
+    if (window.innerWidth < 768) {
+      setCurrentIndex(3);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides.length, mounted]);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);

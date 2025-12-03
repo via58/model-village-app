@@ -56,19 +56,33 @@ export default function Header() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               href="/donate"
               className={`font-medium ${isActive('/donate') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
             >
               Donate
-            </Link>
-            <Link
-              href="/contact"
-              className={`font-medium ${isActive('/contact') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+            </Link> */}
+            <a
+              href="/#contact"
+              className="font-medium text-gray-700 hover:text-green-600 cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                if (pathname === '/') {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact';
+                }
+              }}
             >
               Contact
+            </a>
+            <Link
+              href="/about"
+              className={`font-medium ${isActive('/about') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+            >
+              About Us
             </Link>
-            {isAdmin && (
+            {/* {isAdmin && (
               <Link
                 href="/admin"
                 className={`font-medium ${isActive('/admin') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
@@ -96,7 +110,7 @@ export default function Header() {
               >
                 Login
               </button>
-            )}
+            )} */}
           </nav>
         </div>
 
@@ -110,21 +124,36 @@ export default function Header() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               href="/donate"
               onClick={() => setMobileMenuOpen(false)}
               className={`font-medium text-left ${isActive('/donate') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
             >
               Donate
-            </Link>
+            </Link> */}
             <Link
-              href="/contact"
+              href="/about"
               onClick={() => setMobileMenuOpen(false)}
-              className={`font-medium text-left ${isActive('/contact') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+              className={`font-medium text-left ${isActive('/about') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+            >
+              About Us
+            </Link>
+            <a
+              href="/#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                if (pathname === '/') {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact';
+                }
+              }}
+              className="font-medium text-left text-gray-700 hover:text-green-600 cursor-pointer"
             >
               Contact
-            </Link>
-            {isAdmin && (
+            </a>
+            {/* {isAdmin && (
               <Link
                 href="/admin"
                 onClick={() => setMobileMenuOpen(false)}
@@ -153,7 +182,7 @@ export default function Header() {
               >
                 Login
               </button>
-            )}
+            )} */}
           </nav>
         )}
       </div>
