@@ -1,13 +1,13 @@
 // components/common/Header.js
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { Menu, X, LogOut } from 'lucide-react';
-import { useAuth } from '@/context/AuthContext';
-import logo from '@/assets/logo.png';
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Menu, X, LogOut } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import logo from "@/assets/logo_1.png";
 // import { signInWithGoogle, signOut } from '@/lib/firebase/auth';
 
 export default function Header() {
@@ -33,12 +33,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} alt="Village Welfare Logo" width={64} height={64} />
-            <h1 className="text-xl md:text-2xl font-bold text-green-600">
-             Model Village
+            <Image
+              src={logo}
+              alt="Village Welfare Logo"
+              width={64}
+              height={64}
+            />
+            <h1 className="text-xl md:text-2xl font-bold text-green-600 font-sans">
+              Model Village
             </h1>
           </Link>
-
 
           {/* Mobile Menu Button */}
           <button
@@ -52,7 +56,11 @@ export default function Header() {
           <nav className="hidden md:flex gap-6 items-center">
             <Link
               href="/"
-              className={`font-medium ${isActive('/') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+              className={`font-medium ${
+                isActive("/")
+                  ? "text-green-600"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
             >
               Home
             </Link>
@@ -67,10 +75,12 @@ export default function Header() {
               className="font-medium text-gray-700 hover:text-green-600 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
-                if (pathname === '/') {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                if (pathname === "/") {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 } else {
-                  window.location.href = '/#contact';
+                  window.location.href = "/#contact";
                 }
               }}
             >
@@ -78,7 +88,11 @@ export default function Header() {
             </a>
             <Link
               href="/about"
-              className={`font-medium ${isActive('/about') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+              className={`font-medium ${
+                isActive("/about")
+                  ? "text-green-600"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
             >
               About Us
             </Link>
@@ -120,7 +134,11 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className={`font-medium text-left ${isActive('/') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+              className={`font-medium text-left ${
+                isActive("/")
+                  ? "text-green-600"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
             >
               Home
             </Link>
@@ -134,7 +152,11 @@ export default function Header() {
             <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
-              className={`font-medium text-left ${isActive('/about') ? 'text-green-600' : 'text-gray-700 hover:text-green-600'}`}
+              className={`font-medium text-left ${
+                isActive("/about")
+                  ? "text-green-600"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
             >
               About Us
             </Link>
@@ -143,10 +165,12 @@ export default function Header() {
               onClick={(e) => {
                 e.preventDefault();
                 setMobileMenuOpen(false);
-                if (pathname === '/') {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                if (pathname === "/") {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 } else {
-                  window.location.href = '/#contact';
+                  window.location.href = "/#contact";
                 }
               }}
               className="font-medium text-left text-gray-700 hover:text-green-600 cursor-pointer"
