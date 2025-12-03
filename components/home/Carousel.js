@@ -19,7 +19,7 @@ export default function Carousel() {
   const slides = [
     {
       image: carousel5,
-      title: 'Support Farmers',
+      title: 'Elango Ranagaswamy',
       description: 'Help our village farmers with modern equipment and resources'
     },
     {
