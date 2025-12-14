@@ -1,0 +1,52 @@
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+  line-height: 1.7;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-section h4 {
+  margin-top: 1.2rem;
+}
+
+.video-placeholder {
+  margin-top: 1rem;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timeline-year {
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
