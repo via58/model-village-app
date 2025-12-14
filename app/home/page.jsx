@@ -16,6 +16,19 @@ export default function Home() {
       title: "Elango who turns villages into model ones",
       link: "https://www.dailymotion.com/video/x7v5h7b",
     },
+    {
+      title: "R.Elango, Former President Kuthambakkam Panchayat, Managing Trustee",
+      link: "https://www.youtube.com/watch?v=i6kxFvjOfy4",
+    },
+    {
+      title: "ELANGO IS CREATING WORK OPPORTUNITIES IN RURAL INDIA",
+      link: "https://www.youtube.com/watch?v=UiYlXCC5prk",
+    },
+    {
+      title: "Mr.Rangasamy Elango - Social Leader From Tamilnadu | Special Interview | MukilApp",
+      link: "https://www.youtube.com/watch?v=a19ix-WTzZQ",
+    }
+
   ];
   const getEmbedUrl = (url) => {
     if (url.includes("youtube.com")) {
