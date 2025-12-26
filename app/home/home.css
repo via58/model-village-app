@@ -6,8 +6,8 @@
   background: url("../../assets/herobanner.png") no-repeat right 100% top 20%;
   /* background-color: aquamarine; */
   /* filter: grayscale(100); */
-  padding: 5rem 1.5rem;
-  height: 60vh;
+  padding: 4rem 1.5rem;
+  height: 62vh;
 }
 
 .hero-content {

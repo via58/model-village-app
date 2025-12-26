@@ -46,16 +46,26 @@ export default function Header({ setCurrentSection, currentSection }) {
 
         <li>
           <a
-            className={currentSection === "services" ? "active" : ""}
+            className={currentSection === "programs" ? "active" : ""}
             onClick={() => {
-              setCurrentSection("services");
+              setCurrentSection("programs");
               setOpen(false);
             }}
           >
-            Services
+            Programs
           </a>
         </li>
-
+        <li>
+          <a
+            className={currentSection === "story" ? "active" : ""}
+            onClick={() => {
+              setCurrentSection("story");
+              setOpen(false);
+            }}
+          >
+            Kuthambakkam Model
+          </a>
+        </li>
         <li>
           <a
             className={currentSection === "contact" ? "active" : ""}

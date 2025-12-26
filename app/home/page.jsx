@@ -1,8 +1,9 @@
 // Home.jsx
+'use client';
 import React from "react";
 import "./home.css";
 import { title } from "process";
-export default function Home() {
+export default function Home({ setCurrentSection }) {
   const youtubeLinks = [
     {
       title: "4th NCSE @ XLRI - Elango Rangaswamy (Founder, Panchayat Academy)",
@@ -17,7 +18,8 @@ export default function Home() {
       link: "https://www.dailymotion.com/video/x7v5h7b",
     },
     {
-      title: "R.Elango, Former President Kuthambakkam Panchayat, Managing Trustee",
+      title:
+        "R.Elango, Former President Kuthambakkam Panchayat, Managing Trustee",
       link: "https://www.youtube.com/watch?v=i6kxFvjOfy4",
     },
     {
@@ -25,10 +27,10 @@ export default function Home() {
       link: "https://www.youtube.com/watch?v=UiYlXCC5prk",
     },
     {
-      title: "Mr.Rangasamy Elango - Social Leader From Tamilnadu | Special Interview | MukilApp",
+      title:
+        "Mr.Rangasamy Elango - Social Leader From Tamilnadu | Special Interview | MukilApp",
       link: "https://www.youtube.com/watch?v=a19ix-WTzZQ",
-    }
-
+    },
   ];
   const getEmbedUrl = (url) => {
     if (url.includes("youtube.com")) {
@@ -62,7 +64,10 @@ export default function Home() {
             sustainable infrastructure, and self-governance.
           </p>
           <div className="hero-actions">
-            <a href="#stem" className="btn primary">
+            <a
+              onClick={() => setCurrentSection("programs")}
+              className="btn primary"
+            >
               STEM Program
             </a>
             <a href="#model" className="btn">
@@ -71,7 +76,7 @@ export default function Home() {
             <a href="#donate" className="btn">
               Donate
             </a>
-            <a href="#visit" className="btn">
+            <a onClick={() => setCurrentSection("story")} className="btn">
               Visit Kuthambakkam
             </a>
           </div>
