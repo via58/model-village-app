@@ -37,7 +37,7 @@ export default function Carousel() {
     {
       image: carousel8,
       title: 'Building Community Capacity',
-      description: 'Local youth are trained as educators and researchers—creating sustainable knowledge ecosystems.'
+      description: ' Local youth are trained as educators and researchers—creating sustainable knowledge ecosystems.'
     }
   ];
 

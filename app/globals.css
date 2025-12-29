@@ -12,6 +12,7 @@
     background-position: right 50% top 20%;
     filter: grayscale(70%);
   }
+  
 }
 
 @layer utilities {
